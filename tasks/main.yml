@@ -1,0 +1,6 @@
+---
+- name: vsftpd instalacao
+  import_tasks: install.yml
+
+- name: vsftpd configuracao
+  import_tasks: configure.yml

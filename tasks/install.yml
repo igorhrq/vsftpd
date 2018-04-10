@@ -1,0 +1,26 @@
+---
+- name: Instala servidor vsftpd no DebianRulez
+  when: ansible_os_family == "Debian"
+  apt:
+    name: vsftpd
+    state: installed
+  notify:
+    - start vsftpd
+  tags: vsftpd 
+
+- name: Instala servidor vsftpd no CentOS 7
+  when: ansible_os_family == "RedHat"
+  yum:
+    name: vsftpd
+    state: installed
+  notify:
+    - start vsftpd
+  tags: vsftpd    
+
+- name: Inicia e ativa na inicializacao o servico vsftpd
+  when: ansible_os_family == "RedHat"
+  systemd:
+    name: vsftpd
+    state: started
+    enabled: yes
+  tags: vsftpd

@@ -1,0 +1,10 @@
+---
+- name: restart vsftpd
+  service:
+    name: vsftpd
+    state: restarted
+
+- name: start vsftpd
+  service: 
+    name: vsftpd
+    state: started
