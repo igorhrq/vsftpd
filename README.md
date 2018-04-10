@@ -1,4 +1,4 @@
-Vsftpd Installs on RHEL or Debian or based OS
+Vsftpd Installs on RHEL/Debian or based OS
 =========
 
 This playbook will install vsftpd, will configure port 2120 with anonymous login on and local users of OS will works fine.
