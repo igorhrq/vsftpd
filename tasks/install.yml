@@ -3,7 +3,7 @@
   when: ansible_os_family == "Debian"
   apt:
     name: vsftpd
-    state: installed
+    state: present
   notify:
     - start vsftpd
   tags: vsftpd 
@@ -12,7 +12,7 @@
   when: ansible_os_family == "RedHat"
   yum:
     name: vsftpd
-    state: installed
+    state: present
   notify:
     - start vsftpd
   tags: vsftpd    
