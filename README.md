@@ -1,38 +1,39 @@
-Role Name
+Vsftpd Installs on RHEL or Debian or based OS
 =========
 
-A brief description of the role goes here.
+This playbook will install vsftpd, will configure port 2120 with anonymous login on and local users of OS will works fine.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+- OS Rhel based
+- OS Deb based
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+This Playbook will use just facts of Ansible, import_tasks, and will gotcha everything from a main playbook, everything will be referenced at tests/test.yml for a correct run, more details will be described below.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+You will not need have any another playbook or thing, this playbook is complete, and all content of config files for example, are attached at files/templates.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+This playbook need be executed from tests directory with command `ansible-playbook -i /etc/ansible/inventories/testing/ test.yml` for example, there is the test.yml content:
 
-    - hosts: servers
+    - hosts: all
       roles:
-         - { role: username.rolename, x: 42 }
+         -  role: ../..
 
 License
 -------
 
-BSD
+GNU
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Hello, i am Igor, a IT & Infosec Expert, linux entusiastic and some sysadm/devops skills.  
