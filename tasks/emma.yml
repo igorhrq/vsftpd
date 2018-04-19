@@ -1,0 +1,7 @@
+---
+- name: install emma
+  when: ansible_os_family == "Debian"
+  apt:
+    name: emma
+    state: present
+  tags: emma

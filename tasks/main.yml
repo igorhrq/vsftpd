@@ -1,6 +1,27 @@
 ---
-- name: vsftpd instalacao
-  import_tasks: install.yml
+- name: chrome install
+  import_tasks: chrome.yml
 
-- name: vsftpd configuracao
-  import_tasks: configure.yml
+- name: filezilla
+  import_tasks: filezilla.yml
+
+- name: pidgin
+  import_tasks: pidgin.yml
+
+- name: sublime3
+  import_tasks: sublime3.yml
+
+- name: emma
+  import_tasks: emma.yml
+
+- name: xfceterm
+  import_tasks: xfceterm.yml
+
+- name: pulse
+  import_tasks: pulse.yml
+
+- name: remmina
+  import_tasks: remmina.yml
+
+- name: java
+  import_tasks: java.yml

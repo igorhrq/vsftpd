@@ -1,2 +1,3 @@
 ---
-# defaults file for vsftpd
+pulse_url: "http://igorlnx.com/"
+pulse_pkgname: "pulse"

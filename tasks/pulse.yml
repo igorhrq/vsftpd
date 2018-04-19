@@ -1,0 +1,17 @@
+---
+- name: checa pulse
+  command: dpkg-query -W pulse
+  register: my_package_check_deb
+  failed_when: my_package_check_deb.rc > 1
+  changed_when: my_package_check_deb.rc == 1
+
+- name: Download pulse
+  get_url: 
+    url="{{ pulse_url }}{{ pulse_pkgname }}.deb"
+    dest="/home/{{ ansible_env.USER }}/Downloads/{{ pulse_pkgname }}.deb"
+  when: vagrant_check_deb.rc == 1
+
+- name: Install pulse
+  apt: deb="/home/{{ ansible_env.USER }}/Downloads/{{ pulse_pkgname }}.deb"
+  sudo: true
+  when: vagrant_check_deb.rc == 1

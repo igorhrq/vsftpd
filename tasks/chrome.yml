@@ -1,0 +1,18 @@
+---
+- name: repo chrome
+  copy:
+    src: google-chrome.list
+    dest: /etc/apt/sources.list.d/google-chrome.list
+
+- name: apt-get update e upgrade
+  become: true
+  apt:
+    upgrade: yes
+    update_cache: yes
+
+- name: install chrome
+  when: ansible_os_family == "Debian"
+  apt:
+    name: google-chrome-stable 
+    state: present
+  tags: chrome 

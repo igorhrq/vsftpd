@@ -1,7 +1,0 @@
----
-- name: instala vsftpd
-  apt:
-   name: vsftpd
-   state: present
-   update-cache: true
-  notify: restart vsftpd

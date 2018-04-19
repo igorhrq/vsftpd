@@ -1,0 +1,7 @@
+---
+- name: install xfceterm
+  when: ansible_os_family == "Debian"
+  apt:
+    name: xfce4-terminal
+    state: present
+  tags: xfceterm

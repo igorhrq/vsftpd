@@ -1,0 +1,7 @@
+---
+- name: install filezilla
+  when: ansible_os_family == "Debian"
+  apt:
+    name: filezilla
+    state: present
+  tags: filezilla
